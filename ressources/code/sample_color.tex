@@ -1,0 +1,17 @@
+ \begin{lstlisting}[language=Java]
+|{\colorbox{red!20}{public}| boolean equals(Object other) {
+    |{\colorbox{red!20}{if}| (other == null) {
+        |{\colorbox{green!20}{return}| false;
+    |{\colorbox{green!20}{\}}|
+    |{\colorbox{orange!20}{if}| (!(other instanceof Product)) {
+        |{\colorbox{blue!20}{return}| false;
+    |{\colorbox{blue!20}{\}}|
+    |{\colorbox{red!20}{Product}| product2 = (Product) other;
+    |{\colorbox{red!20}{if}| (getName().equals(product2.getName())) {
+        |{\colorbox{green!20}{if}| (getPrice() == product2.getPrice()) {
+            |{\colorbox{orange!20}{return}| true;
+        |{\colorbox{orange!20}{\}}|
+    |{\colorbox{blue!20}{\}}|
+    |{\colorbox{red!20}{return}| false;
+|{\colorbox{green!20}{\}}|
+\end{lstlisting}

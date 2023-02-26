@@ -1,0 +1,119 @@
+% Load necessary packages for the document
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{ulem}
+\usepackage{tabularx}
+
+% Use the Darmstadt theme and the dolphin color theme for the presentation
+\usetheme{Darmstadt}
+\usecolortheme{dolphin}
+
+% Load the TikZ package and necessary libraries
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows.meta}
+
+% Define styles for blocks and lines in TikZ
+\tikzset{
+    block/.style = {
+        rectangle, draw, fill=#1, text width=8em, 
+        text centered, rounded corners, minimum height=4em
+    },
+    block/.default = ForestGreen!20,
+    line/.style = {thick=2pt, ->, >=stealth, line width=2pt},
+    start/.style = {
+        circle, draw, fill=black, minimum height=2em
+    },
+    pics/stop/.style args = {#1}{
+        code = {
+            \node [start] (#1) {};
+            \draw circle [radius=1.2em, fill=green, line width=2pt];
+        }
+    }
+}
+
+% Use a serif font for math only
+\usefonttheme[onlymath]{serif}
+
+% Set the style for code listings
+\lstset{
+    framerule=1pt,
+    frame=tb,
+    emphstyle={\small\ttfamily\bfseries\color{Orange}},
+    numbers=left,
+    numberstyle= \tiny\color{black},
+    basicstyle = \small\ttfamily,
+    keywordstyle    = \bfseries\color{BrickRed},
+    identifierstyle = \bfseries\color{black},
+    stringstyle     = \bfseries\color{ForestGreen},
+    commentstyle    = \bfseries\color{Violet},
+    breaklines      = true,
+    columns         = fixed,
+    basewidth       = .5em,
+    backgroundcolor = \color{Gray!5},
+    tabsize         = 2,
+    showspaces      = false,
+    showstringspaces= false,
+    escapeinside    = ||
+}
+
+% Set the template for blocks with rounded edges and shadow
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+% Set theorems to be numbered
+\setbeamertemplate{theorems}[numbered]
+
+% Load additional packages for bibliographies and hyperlinks
+\usepackage{natbib}
+\usepackage{hyperref}
+
+% Custom colors for environments "Satz" and "Beweis"
+\AtBeginEnvironment{theorem}{
+  \setbeamercolor{block title}{bg=Plum, fg=white}
+  \setbeamercolor{block body}{bg=Plum!10}
+}
+\AtBeginEnvironment{proof}{
+  \setbeamercolor{block title}{bg=Plum!70, fg=white}
+  \setbeamercolor{block body}{bg=Plum!10}
+}
+
+% Define a new theorem-like environment "Custom Block"
+\newtheorem{CustomBlock}{Custom Block}
+\newenvironment<>{customblock}[2] {
+  \setbeamercolor{block title}{fg=white,bg=BurntOrange!75!black}
+  \begin{CustomBlock}[#1]{#2}}{\end{CustomBlock}}
+
+% Define a new command to add the slide number of the lecture
+\newcommand{\addSlideNo}[2]{\hspace{0pt}\makebox[\linewidth][l]{\makebox[0pt][l]{\scriptsize \textbf{VL:} #1, \textbf{Folie:} #2}}}
+
+% Define a new command to add a reference to an exercise sheet
+\newcommand{\addSheetEx}[3]{\hspace{0pt}\makebox[\linewidth][l]{\makebox[0pt][l]{\scriptsize \textbf{#1B} #2, \textbf{A}#3}}}
+
+% Define FAQ command
+\newcommand{\FAQ}[2]{
+\textbf{Q: #1}\\
+\vspace{0.25cm}
+\textbf{A:} #2\\
+}
+
+% Set the font size for title, subtitle, author, date, and institute
+\setbeamerfont{title}{size=\large}
+\setbeamerfont{subtitle}{size=\small}
+\setbeamerfont{author}{size=\small}
+\setbeamerfont{date}{size=\small}
+\setbeamerfont{institute}{size=\small}
+
+% At the beginning of each section, display the table of contents for that section
+\AtBeginSection[]
+{
+  \begin{frame}
+    \setcounter{tocdepth}{2}
+    \frametitle{Inhaltsverzeichnis}
+        \tableofcontents
+        [
+            currentsection,
+            hideothersubsections
+        ]
+  \end{frame}
+}
+

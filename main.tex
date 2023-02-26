@@ -1,0 +1,31 @@
+\documentclass[10pt, xcolor={dvipsnames}]{beamer}
+% The 10pt option sets the font size to 10 points.
+% The xcolor option sets the color model to dvipsnames, which provides access to a large range of predefined color names.
+
+% Import config.sty
+\input{config.sty}
+
+% Set title, name, date, etc.
+\title{title}
+\subtitle{subtitle}
+\author{author}
+\date{\today}
+
+% ---------- BEGIN DOCUMENT ----------
+
+\begin{document}
+
+% Add titlepage and table of contents
+\frame{\titlepage}
+\begin{frame}
+\frametitle{table of contents}
+\setcounter{tocdepth}{1}
+\tableofcontents
+\end{frame}
+
+% Add sections
+\input{sections/1_first_section.tex}
+\input{sections/2_FAQ.tex}
+\input{sections/3_end.tex}
+
+\end{document}

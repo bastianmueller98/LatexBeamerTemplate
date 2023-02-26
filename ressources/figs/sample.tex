@@ -1,0 +1,14 @@
+\begin{tikzpicture}[node distance=2cm]
+
+% Nodes
+\node (start) [block] {Start};
+\node (n1) [block, below of=start] {Node 1};
+\node (n2) [block, right of=n1, xshift=2cm] {Node 2};
+\node (n3) [block, right of=n2, xshift=2cm] {Node 3};
+\node (n4) [block, right of=n3, xshift=4cm] {Node Extra};
+
+% Lines
+\draw [line] (start.north) to [bend left=90, xshift=1cm, yshift=1cm] (n1.east);
+\draw [line] (n1.south) to [bend right=45] node [pos=0.5, below] {yes} (n2.south);
+\draw [line] (n2.north) -| node[anchor=west, yshift=0.5cm] {if True} ([yshift=3cm]n2.north) -| ([xshift=-4cm, yshift=3cm]n2.north) -| ([xshift=-1cm]start.west) -- (start.west);
+\end{tikzpicture}

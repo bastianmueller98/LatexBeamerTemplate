@@ -1,0 +1,17 @@
+\begin{lstlisting}[language=Java]
+public boolean equals(Object other) {
+    if (other == null) {
+        return false;
+    }
+    if (!(other instanceof Product)) {
+        return false;
+    }
+    Product product2 = (Product) other;
+    if (getName().equals(product2.getName())) {
+        if (getPrice() == product2.getPrice()) {
+            return true;
+        }
+    }
+    return false;
+}
+\end{lstlisting}

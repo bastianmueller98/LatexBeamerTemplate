@@ -1,0 +1,111 @@
+\section{First Section}
+
+\subsection{Block section}
+
+\begin{frame}{Blocks}
+	\begin{alertblock}{Alertblock}
+		\begin{itemize}
+			\item This is an alertblock
+		\end{itemize}
+	\end{alertblock}
+
+	\pause
+
+	\begin{block}{Normal Block}
+		\begin{itemize}
+			\item This is a normal block
+			\item {\color{gray} There are more blocks!}
+		\end{itemize}
+	\end{block}
+
+	\begin{exampleblock}{Example Block}
+		\begin{itemize}
+			\item This is an example block
+		\end{itemize}
+	\end{exampleblock}
+
+	\begin{customblock}{Numbered (theorem-like) Custom Block}
+		This is a theorem-like custom block
+	\end{customblock}
+\end{frame}
+
+
+
+
+
+\subsection{Math section}
+
+\begin{frame}{Math}
+	\begin{theorem}[Theorem of me (2023)]
+		This is a theorem using a custom color!
+	\end{theorem}
+	\begin{proof}
+		This is a proof using a custom color!
+	\end{proof}
+\end{frame}
+
+
+
+
+
+\subsection{Code section}
+
+\begin{frame}[fragile]{Code}
+Make the frame fragile!
+\input{ressources/code/sample.tex}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Code}
+\input{ressources/code/sample_color.tex}
+\end{frame}
+
+
+
+
+
+\subsection{Image, Columns, Drawing section}
+\begin{frame}{White Box Test vs. Black Box Test}
+	\begin{columns}
+		\begin{column}{0.55\textwidth}
+			\textbf{Black Box Test}\\
+			\begin{itemize}
+				\item Implementierung unbekannt
+				\item Anhand der Spezifikation entwickelt
+				\item \texttt{Output == Expected Output}
+			\end{itemize}
+			\addSlideNo{9}{63-77}
+			\addSheetEx{A}{10}{3}
+			\vspace{0.1cm}
+
+			\pause
+
+			\textbf{White Box Test}\\
+			\begin{itemize}
+				\item Code bekannt
+				\item Zeilenüberdeckung ...
+			\end{itemize}
+			\addSlideNo{11}{8-27}
+		\end{column}
+		\begin{column}{0.55\textwidth}
+
+			\pause
+
+			\begin{center}
+				\includegraphics[width=\textwidth]{ressources/imgs/sample.jpg}
+				{\tiny \url{https://www.temok.com/blog/wp-content/uploads/2020/10/Virus5.jpg}, Stand: 16.02.23}
+			\end{center}
+
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Drawing TikZ}
+	\resizebox{\textwidth}{!}{
+    	\input{ressources/figs/sample.tex}
+	}
+	\addSheetEx{Ü}{8}{3}
+\end{frame}
